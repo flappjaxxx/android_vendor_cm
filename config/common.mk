@@ -168,5 +168,5 @@ else
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.cm.version=AOSPxXx-v2.1B6 \
-  ro.modversion=AOSPxXx-v2.1B6
+  ro.cm.version=AOSPxXx-v2.1B7 \
+  ro.modversion=AOSPxXx-v2.1B7
