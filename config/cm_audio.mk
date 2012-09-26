@@ -9,10 +9,15 @@ UI_PATH := vendor/cm/prebuilt/common/media/audio/ui
 
 # Alarms
 PRODUCT_COPY_FILES += \
+	$(ALARM_PATH)/Alarm_Beep_01.ogg:system/media/audio/alarms/Alarm_Beep_01.ogg \
+	$(ALARM_PATH)/Alarm_Beep_02.ogg:system/media/audio/alarms/Alarm_Beep_02.ogg \
+	$(ALARM_PATH)/Alarm_Beep_03.ogg:system/media/audio/alarms/Alarm_Beep_03.ogg \
+	$(ALARM_PATH)/Alarm_Buzzer.ogg:system/media/audio/alarms/Alarm_Buzzer.ogg \
 	$(ALARM_PATH)/CyanAlarm.ogg:system/media/audio/alarms/CyanAlarm.ogg
 
 # Notifications
 PRODUCT_COPY_FILES += \
+	$(NOTIFICATION_PATH)/01_Sherbet.ogg:system/media/audio/notifications/01_Sherbet.ogg \
 	$(NOTIFICATION_PATH)/CyanMail.ogg:system/media/audio/notifications/CyanMail.ogg \
 	$(NOTIFICATION_PATH)/CyanMessage.ogg:system/media/audio/notifications/CyanMessage.ogg \
 	$(NOTIFICATION_PATH)/CyanPing.ogg:system/media/audio/notifications/CyanPing.ogg \
@@ -24,6 +29,7 @@ PRODUCT_COPY_FILES += \
 
 # Ringtones
 PRODUCT_COPY_FILES += \
+	$(RINGTONE_PATH)/Basic_Tone.ogg:system/media/audio/ringtones/Basic_Tone.ogg \
 	$(RINGTONE_PATH)/Bongo.ogg:system/media/audio/ringtones/Bongo.ogg \
 	$(RINGTONE_PATH)/Boxbeat.ogg:system/media/audio/ringtones/Boxbeat.ogg \
 	$(RINGTONE_PATH)/CyanTone.ogg:system/media/audio/ringtones/CyanTone.ogg \

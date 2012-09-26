@@ -1,0 +1,15 @@
+#!/bin/sh
+rm -rf FJ-Tools*.zip FJ*.zip fjtools*.tgz
+rm -rf system
+mkdir -p system
+mkdir -p system/app
+mkdir -p system/bin
+mkdir -p system/media
+cp -R ../apps/FJTools-Note.apk system/app/FJTools-Note.apk
+cp -R ../bin/fjtool system/bin/fjtool
+cp -R ../media/fjtversion system/media/fjtversion
+sleep 3
+tar -pczf fjtoolsupdatejb21b6.tgz system
+#zip -r FJ-Tools-latest-JB.zip META-INF system data
+ftp-upload -h yourftpserver.com -v --passive -u username --password yourpassword -d public_html/i717/TU2/updates fjtoolsupdatejb21b6.tgz toolsversioncm10.txt romversioncm10.txt fjtversioncm10 aospchangelog.htm hosts.txt
+ftp-upload -h yourftpserver.com -v --passive -u username --password yourpassword -d public_html/i717/TU2/OTA rom.xml
