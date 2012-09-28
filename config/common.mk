@@ -168,5 +168,5 @@ else
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.cm.version=AOSPxXx-$(shell date +%Y%m%d) \
-  ro.modversion=AOSPxXx-$(shell date +%Y%m%d)
+  ro.cm.version=AOSPxXx-$(shell date -u +%Y%m%d) \
+  ro.modversion=AOSPxXx-$(shell date -u +%Y%m%d)
