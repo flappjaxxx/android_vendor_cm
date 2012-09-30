@@ -83,9 +83,7 @@ PRODUCT_PACKAGES += \
     Camera \
     Development \
     LatinIME \
-    SpareParts \
-    Superuser \
-    Superuser.apk 
+    SpareParts 
 
 # Optional CM packages
 PRODUCT_PACKAGES += \
@@ -101,8 +99,7 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     FJTools-Note \
     libcyanogen-dsp \
-    audio_effects.conf \
-    CMUpdater
+    audio_effects.conf
 
 # Extra tools in CM
 PRODUCT_PACKAGES += \
