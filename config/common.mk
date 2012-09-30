@@ -101,7 +101,8 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     FJTools-Note \
     libcyanogen-dsp \
-    audio_effects.conf
+    audio_effects.conf \
+    CMUpdater
 
 # Extra tools in CM
 PRODUCT_PACKAGES += \
