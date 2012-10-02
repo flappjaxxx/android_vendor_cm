@@ -15,9 +15,9 @@ include vendor/cm/config/cm_audio.mk
 
 # Default ringtone
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.ringtone=CyanTone.ogg \
-    ro.config.notification_sound=CyanMessage.ogg \
-    ro.config.alarm_alert=CyanAlarm.ogg
+    ro.config.ringtone=Basic_Tone.ogg \
+    ro.config.notification_sound=01_Sherbet.ogg \
+    ro.config.alarm_alert=Alarm_Buzzer.ogg
 
 PRODUCT_PACKAGES += \
   Mms

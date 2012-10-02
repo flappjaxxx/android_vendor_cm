@@ -5,14 +5,6 @@ ifneq ($(TARGET_BOOTANIMATION_NAME),)
         vendor/cm/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
 endif
 
-ifdef CM_NIGHTLY
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.rommanager.developerid=cyanogenmodnightly
-else
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.rommanager.developerid=cyanogenmod
-endif
-
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -37,7 +29,9 @@ PRODUCT_COPY_FILES += \
 
 # init.d support
 PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/etc/init.d/99gpuoc:system/etc/init.d/99gpuoc \
     vendor/cm/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/cm/prebuilt/common/etc/hosts.txt:system/etc/hosts \
     vendor/cm/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # userinit support
@@ -51,10 +45,12 @@ PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/bin/handle_compcache:system/bin/handle_compcache
 
 PRODUCT_COPY_FILES +=  \
-    vendor/cm/proprietary/RomManager.apk:system/app/RomManager.apk \
+    vendor/cm/prebuilt/common/bin/fjtool:system/bin/fjtool \
+    vendor/cm/prebuilt/common/media/fjtversion:system/media/fjtversion \
     vendor/cm/proprietary/Term.apk:system/app/Term.apk \
     vendor/cm/proprietary/lib/armeabi/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so \
-	vendor/cm/prebuilt/common/apps/Superuser.apk:system/app/Superuser.apk
+    vendor/cm/prebuilt/common/apps/Superuser.apk:system/app/Superuser.apk \
+    vendor/cm/prebuilt/common/xbin/su:system/xbin/su
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
@@ -74,15 +70,14 @@ PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/etc/mkshrc:system/etc/mkshrc
 
 # T-Mobile theme engine
-include vendor/cm/config/themes_common.mk
+# include vendor/cm/config/themes_common.mk
 
 # Required CM packages
 PRODUCT_PACKAGES += \
     Camera \
     Development \
     LatinIME \
-    SpareParts \
-    su
+    SpareParts 
 
 # Optional CM packages
 PRODUCT_PACKAGES += \
@@ -101,12 +96,12 @@ PRODUCT_PACKAGES += \
 
 # Custom CM packages
 PRODUCT_PACKAGES += \
-    Trebuchet \
-    DSPManager \
+    DSPManager\
+    Music \
+    Launcher3 \
+    FJTools-Note \
     libcyanogen-dsp \
-    audio_effects.conf \
-    CMWallpapers \
-    Apollo
+    audio_effects.conf
 
 # Extra tools in CM
 PRODUCT_PACKAGES += \
@@ -153,5 +148,5 @@ else
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.cm.version=$(CM_VERSION) \
-  ro.modversion=$(CM_VERSION)
+  ro.cm.version=AOSPxXx-ICS-$(shell date -u +%Y%m%d) \
+  ro.modversion=AOSPxXx-ICS-$(shell date -u +%Y%m%d)
