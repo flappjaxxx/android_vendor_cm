@@ -33,6 +33,7 @@ modules.builtin
 *.patch
 *.gcno
 makeupdatepkg-ftp-jb
+makeupdatepkg-ftp-ics
 #
 # Top-level generic files
 #
