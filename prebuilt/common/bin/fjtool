@@ -1511,9 +1511,9 @@ mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p24 /system
 }
 
 themes() {
-FILE=themesupport.tgz
-MD5SUM=9d4758282e721d5ad2446b6806eaee28
-URL="http://rootdev.org/i717/TU2/updates/themesupport.tgz"
+FILE=themesupportR1.tgz
+MD5SUM=270186b8f45aa0e1523dafa019ae6c72
+URL="http://rootdev.org/i717/TU2/updates/themesupportR1.tgz"
 if [ ! -d /sdcard/tmp ]; then
   MK=1
   mkdir -p /sdcard/tmp
@@ -1540,7 +1540,7 @@ echo "Mounting File System"
   cd /
 cd /sdcard/tmp
 echo "Extracting Package"
-tar -xzf themesupport.tgz
+tar -xzf themesupportR1.tgz
 echo "Installing Theme Support"
 cp -R system /
 echo "Setting Permissions"
