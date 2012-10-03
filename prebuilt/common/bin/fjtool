@@ -803,9 +803,9 @@ echo --Feature disabled for now--
 }
 
 cwmrec() {
-FILE=cwmrec.tgz
-MD5SUM=76f3c4d757ef50855d43b3a3ec07e221
-URL="http://rootdev.org/i717/TU2/updates/cwmrec.tgz"
+FILE=cwmrec5.tgz
+MD5SUM=9c0a662a8f3abc56925bfb846e0b5d01
+URL="http://rootdev.org/i717/TU2/updates/cwmrec5.tgz"
 if [ ! -d /sdcard/download/rectmp ]; then
   MK=1
   mkdir -p /sdcard/download/rectmp
@@ -829,7 +829,7 @@ fi
 if [ "$GOOD" = "1" ]; then
   cd /sdcard/download/rectmp
 echo "Extracting Package"
-  tar -xzf cwmrec.tgz
+  tar -xzf cwmrec5.tgz
 echo "Flashing Recovery"
   cp recovery.img /sdcard/recovery.img
 dd if=/sdcard/recovery.img of=/dev/block/mmcblk0p22
@@ -851,9 +851,9 @@ fi
 }
 
 cwmtouch() {
-FILE=cwmtouch.tgz
-MD5SUM=65e1ab3891460c1e95591711e1667d42
-URL="http://rootdev.org/i717/TU2/updates/cwmtouch.tgz"
+FILE=cwmtouch6.tgz
+MD5SUM=d54a2c1250ddc8f795aef00a8104180f
+URL="http://rootdev.org/i717/TU2/updates/cwmtouch6.tgz"
 if [ ! -d /sdcard/download/rectmp ]; then
   MK=1
   mkdir -p /sdcard/download/rectmp
@@ -877,13 +877,14 @@ fi
 if [ "$GOOD" = "1" ]; then
   cd /sdcard/download/rectmp
 echo "Extracting Package"
-  tar -xzf cwmtouch.tgz
+  tar -xzf cwmtouch6.tgz
 echo "Flashing Recovery"
   cp recovery.img /sdcard/recovery.img
 dd if=/sdcard/recovery.img of=/dev/block/mmcblk0p22
 echo "Cleaning up"
   cd - >/dev/null 2>&1
   echo "Done! Please Reboot and Enjoy CWM Touch Recovery"
+  echo "Go give bhundven some thanks!"
 else
   echo "Failed to Install CWM Touch Recovery"
   echo "Try Again"
