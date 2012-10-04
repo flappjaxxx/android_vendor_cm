@@ -1736,6 +1736,8 @@ main() {
     "wifitether") wifitether ;;   # *
     "213dpi") 213dpi ;;   # *
     "cwmrec") cwmrec ;;   # *
+    "cwmrec5") cwmrec5 ;;   # *
+    "cwmrec6") cwmrec6 ;;   # *
     "cwmtouch") cwmtouch ;;   # *
     "twrp") twrp ;;   # *
     "1134sleepmax") 1134sleepmax ;;   # *
