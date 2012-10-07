@@ -795,11 +795,11 @@ rm /sdcard/fjtversioncm9
 }
 
 wipfeat() {
-echo --Work In Progress--
+echo "--Work In Progress--"
 }
 
 disabled() {
-echo --Feature disabled for now--
+echo "--Feature disabled for now--"
 }
 
 cwmrec5() {
@@ -1557,10 +1557,10 @@ echo "Theme support disabled"
 echo "Check for updates soon"
 }
 
-themesdisabled() {
-FILE=themesupport.tgz
-MD5SUM=9d4758282e721d5ad2446b6806eaee28
-URL="http://rootdev.org/i717/TU2/updates/themesupport.tgz"
+poffice() {
+FILE=poffice.tgz
+MD5SUM=ac258f5f9264a1efa0c23bc33793c38f
+URL="http://rootdev.org/i717/TU2/updates/poffice.tgz"
 if [ ! -d /sdcard/tmp ]; then
   MK=1
   mkdir -p /sdcard/tmp
@@ -1587,19 +1587,17 @@ echo "Mounting File System"
   cd /
 cd /sdcard/tmp
 echo "Extracting Package"
-tar -xzf themesupport.tgz
-echo "Installing Theme Support"
+tar -xzf poffice.tgz
+echo "Installing Polaris Office"
 cp -R system /
 echo "Setting Permissions"
-chmod 644 /system/app/ThemeChooser.apk
-chmod 644 /system/app/ThemeManager.apk
-chmod 644 /system/etc/permissions/com.tmobile.software.themes.xml
+chmod 644 /system/app/PolarisOffice.apk
+chmod 644 /system/lib/libpolarisoffice.so
   mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p24 /system
   cd - >/dev/null 2>&1
-  echo "Done! Reboot and enjoy silly theme support!"
-  echo "Theme Chooser will now be in your App Drawer NOT in Settings"
+  echo "Done! Enjoy Polaris Office!"
 else
-  echo "Failed to download / install Theme Support"
+  echo "Failed to download / install Polaris Office"
   exit 1
 fi
 rm  /sdcard/tmp/$FILE
@@ -1802,6 +1800,7 @@ main() {
     "fastcharge") fastcharge ;;   # *
     "fastcharge2") fastcharge2 ;;   # *
     "nofastcharge") nofastcharge ;;   # *
+    "poffice") poffice ;;   # *
 
   
     ### Any other command - we are a wrapper
