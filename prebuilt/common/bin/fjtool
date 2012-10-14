@@ -948,9 +948,9 @@ fi
 }
 
 twrp() {
-FILE=twrprec222.tgz
-MD5SUM=81ce49bbfc9d218e1e426009e17d70b9
-URL="http://rootdev.org/i717/TU2/updates/twrprec222.tgz"
+FILE=twrprec23.tgz
+MD5SUM=6c5699b10640b4780a8f46d9c2b34180
+URL="http://rootdev.org/i717/TU2/updates/twrprec23.tgz"
 if [ ! -d /sdcard/download/rectmp ]; then
   MK=1
   mkdir -p /sdcard/download/rectmp
@@ -974,7 +974,7 @@ fi
 if [ "$GOOD" = "1" ]; then
   cd /sdcard/download/rectmp
 echo "Extracting Package"
-  tar -xzf twrprec222.tgz
+  tar -xzf twrprec23.tgz
 echo "Flashing Recovery"
   cp recovery.img /sdcard/recovery.img
 dd if=/sdcard/recovery.img of=/dev/block/mmcblk0p22
