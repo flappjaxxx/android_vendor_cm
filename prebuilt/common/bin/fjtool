@@ -900,7 +900,7 @@ fi
 
 twrp() {
 FILE=twrprec23d2att.tgz
-MD5SUM=9a61970998a7da5fd42f0120e180aa1c
+MD5SUM=563d8c1ea3a218f35849753b1fc0151d
 URL="http://rootdev.org/i717/TU2/updates/twrprec23d2att.tgz"
 if [ ! -d /sdcard/download/rectmp ]; then
   MK=1
