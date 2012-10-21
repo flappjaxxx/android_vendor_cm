@@ -744,9 +744,9 @@ fi
 }
 
 netflixblk() {
-FILE=Netflix-Black-Rotation-v2.0.0.apk
-MD5SUM=6b1a0a06f065e2c74fee2ee84a67ed4d
-URL="http://rootdev.org/i717/TU2/OTA/Apps/Netflix-Black-Rotation-v2.0.0.apk"
+FILE=Netflix-Black-Rotation-v2.0.2.apk
+MD5SUM=268f93565b0a4a9dc0b402f5627ff87b
+URL="http://rootdev.org/i717/TU2/OTA/Apps/Netflix-Black-Rotation-v2.0.2.apk"
 if [ ! -d /sdcard/tmp ]; then
   MK=1
   mkdir -p /sdcard/tmp
@@ -770,9 +770,9 @@ fi
 if [ "$GOOD" = "1" ]; then
 echo "Installing Netflix Black with Rotation Mods"
 cd /sdcard/tmp
-pm install -r Netflix-Black-Rotation-v2.0.0.apk
+pm install -r Netflix-Black-Rotation-v2.0.2.apk
 else
-  echo "Failed to download / install Netflix-Black-Rotation-v2.0.0"
+  echo "Failed to download / install Netflix-Black-Rotation-v2.0.2"
   exit 1
 fi
 rm  /sdcard/tmp/$FILE
