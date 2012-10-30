@@ -802,7 +802,7 @@ disabled() {
 echo "--Feature disabled for now--"
 }
 
-cwmrec5() {
+cwmrec52() {
 FILE=cwmrec5.tgz
 MD5SUM=9c0a662a8f3abc56925bfb846e0b5d01
 URL="http://rootdev.org/i717/TU2/updates/cwmrec5.tgz"
@@ -850,7 +850,7 @@ if [ "$MK" = "1" ]; then
 fi
 }
 
-cwmrec6() {
+cwmrec62() {
 FILE=cwmtouch6.tgz
 MD5SUM=d54a2c1250ddc8f795aef00a8104180f
 URL="http://rootdev.org/i717/TU2/updates/cwmtouch6.tgz"
@@ -899,7 +899,7 @@ if [ "$MK" = "1" ]; then
 fi
 }
 
-cwmtouch() {
+cwmtouch2() {
 FILE=cwmtouch5.tgz
 MD5SUM=d260c22aad6d2efcf764da695b3181c7
 URL="http://rootdev.org/i717/TU2/updates/cwmtouch5.tgz"
@@ -947,7 +947,7 @@ if [ "$MK" = "1" ]; then
 fi
 }
 
-twrp() {
+twrp2() {
 FILE=twrprec231.tgz
 MD5SUM=af6666459161328fc742d91a7e67d54b
 URL="http://rootdev.org/i717/TU2/updates/twrprec231.tgz"
