@@ -777,7 +777,7 @@ echo "--Feature disabled for now--"
 
 cwmrec6() {
 FILE=recovery-clockwork-6.0.1.0-maguro.img
-MD5SUM=d54a2c1250ddc8f795aef00a8104180f
+MD5SUM=13bec00e552660b58a4bd8c45051a5fe
 URL="http://rootdev.org/maguro/files/recovery-clockwork-6.0.1.0-maguro.img"
 if [ ! -d /sdcard/download/rectmp ]; then
   MK=1
