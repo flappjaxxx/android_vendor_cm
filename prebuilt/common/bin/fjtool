@@ -807,7 +807,6 @@ dd if=/sdcard/recovery.img of=/dev/block/mmcblk0p8
 echo "Cleaning up"
   cd - >/dev/null 2>&1
   echo "Done! Please Reboot and Enjoy CWM Recovery"
-  echo "Go give bhundven some thanks!"
 else
   echo "Failed to Install CWM Recovery"
   echo "Try Again"
