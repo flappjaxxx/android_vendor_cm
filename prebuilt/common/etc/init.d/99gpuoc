@@ -1,4 +1,0 @@
-#!/system/bin/sh
-echo 300000000 > /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_gpuclk
-echo 228571000 > /sys/devices/platform/kgsl-2d0.0/kgsl/kgsl-2d0/max_gpuclk
-echo 228571000 > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl-2d1/max_gpuclk
