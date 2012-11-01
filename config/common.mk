@@ -19,6 +19,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.dateformat=MM-dd-yyyy \
     ro.com.android.dataroaming=false
 
+PRODUCT_COPY_FILES += \
+        vendor/cm/prebuilt/common/bootanimation/jb-bootanimation.zip:system/media/bootanimation.zip
+
 # Copy over the changelog to the device
 PRODUCT_COPY_FILES += \
     vendor/cm/CHANGELOG.mkdn:system/etc/CHANGELOG-CM.txt
@@ -169,5 +172,12 @@ else
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.cm.version=AOSPxXx-$(shell date -u +%Y%m%d) \
-  ro.modversion=AOSPxXx-$(shell date -u +%Y%m%d)
+    ro.developerid=flappjaxxx \
+    ro.goo.developerid=flappjaxxx \
+    ro.goo.rom=AOSPxXx-GNex \
+    ro.goo.version=$(shell date -u +%Y%m%d) \
+    ro.goo.board=maguro
+
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro.cm.version=AOSPxXx-GNex-$(shell date -u +%Y%m%d) \
+  ro.modversion=AOSPxXx-GNex-$(shell date -u +%Y%m%d)
