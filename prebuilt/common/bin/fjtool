@@ -1585,6 +1585,7 @@ main() {
   case $CMD in
 
     "180dpi") 180dpi ;;
+    "160dpi") 160dpi ;;
     "177dpi") 177dpi ;;
     "190dpi") 190dpi ;;   # Hardcoded into FJTool.apk
     "192dpi") 192dpi ;;   # *
