@@ -53,22 +53,22 @@ PrintVersion() {
   printf "$FJTool_VERSION"
 }
 
-177dpi() {
+160dpi() {
 mount -o rw,remount -t yaffs2 /dev/block/mmcblk0p10 /system
-/system/xbin/sed -i 's/ro.sf.lcd_density=320/ro.sf.lcd_density=177/g' /system/build.prop
-/system/xbin/sed -i 's/ro.sf.lcd_density=280/ro.sf.lcd_density=177/g' /system/build.prop
-/system/xbin/sed -i 's/ro.sf.lcd_density=260/ro.sf.lcd_density=177/g' /system/build.prop
-/system/xbin/sed -i 's/ro.sf.lcd_density=240/ro.sf.lcd_density=177/g' /system/build.prop
-/system/xbin/sed -i 's/ro.sf.lcd_density=230/ro.sf.lcd_density=177/g' /system/build.prop
-/system/xbin/sed -i 's/ro.sf.lcd_density=220/ro.sf.lcd_density=177/g' /system/build.prop
-/system/xbin/sed -i 's/ro.sf.lcd_density=213/ro.sf.lcd_density=177/g' /system/build.prop
-/system/xbin/sed -i 's/ro.sf.lcd_density=210/ro.sf.lcd_density=177/g' /system/build.prop
-/system/xbin/sed -i 's/ro.sf.lcd_density=200/ro.sf.lcd_density=177/g' /system/build.prop
-/system/xbin/sed -i 's/ro.sf.lcd_density=192/ro.sf.lcd_density=177/g' /system/build.prop
-/system/xbin/sed -i 's/ro.sf.lcd_density=190/ro.sf.lcd_density=177/g' /system/build.prop
-/system/xbin/sed -i 's/ro.sf.lcd_density=180/ro.sf.lcd_density=177/g' /system/build.prop
+/system/xbin/sed -i 's/ro.sf.lcd_density=320/ro.sf.lcd_density=160/g' /system/build.prop
+/system/xbin/sed -i 's/ro.sf.lcd_density=280/ro.sf.lcd_density=160/g' /system/build.prop
+/system/xbin/sed -i 's/ro.sf.lcd_density=260/ro.sf.lcd_density=160/g' /system/build.prop
+/system/xbin/sed -i 's/ro.sf.lcd_density=240/ro.sf.lcd_density=160/g' /system/build.prop
+/system/xbin/sed -i 's/ro.sf.lcd_density=230/ro.sf.lcd_density=160/g' /system/build.prop
+/system/xbin/sed -i 's/ro.sf.lcd_density=220/ro.sf.lcd_density=160/g' /system/build.prop
+/system/xbin/sed -i 's/ro.sf.lcd_density=213/ro.sf.lcd_density=160/g' /system/build.prop
+/system/xbin/sed -i 's/ro.sf.lcd_density=210/ro.sf.lcd_density=160/g' /system/build.prop
+/system/xbin/sed -i 's/ro.sf.lcd_density=200/ro.sf.lcd_density=160/g' /system/build.prop
+/system/xbin/sed -i 's/ro.sf.lcd_density=192/ro.sf.lcd_density=160/g' /system/build.prop
+/system/xbin/sed -i 's/ro.sf.lcd_density=190/ro.sf.lcd_density=160/g' /system/build.prop
+/system/xbin/sed -i 's/ro.sf.lcd_density=180/ro.sf.lcd_density=160/g' /system/build.prop
 mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p10 /system
-echo LCD Density set to 177dpi, -Tablet Mode- Reboot to Activate!
+echo LCD Density set to 160dpi, -Tiny Tablet Mode- Reboot to Activate!
 }
 
 180dpi() {
@@ -84,7 +84,7 @@ mount -o rw,remount -t yaffs2 /dev/block/mmcblk0p10 /system
 /system/xbin/sed -i 's/ro.sf.lcd_density=200/ro.sf.lcd_density=180/g' /system/build.prop
 /system/xbin/sed -i 's/ro.sf.lcd_density=192/ro.sf.lcd_density=180/g' /system/build.prop
 /system/xbin/sed -i 's/ro.sf.lcd_density=190/ro.sf.lcd_density=180/g' /system/build.prop
-/system/xbin/sed -i 's/ro.sf.lcd_density=177/ro.sf.lcd_density=180/g' /system/build.prop
+/system/xbin/sed -i 's/ro.sf.lcd_density=160/ro.sf.lcd_density=180/g' /system/build.prop
 mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p10 /system
 echo LCD Density set to 180dpi, Reboot to Activate!
 }
@@ -102,7 +102,7 @@ mount -o rw,remount -t yaffs2 /dev/block/mmcblk0p10 /system
 /system/xbin/sed -i 's/ro.sf.lcd_density=200/ro.sf.lcd_density=190/g' /system/build.prop
 /system/xbin/sed -i 's/ro.sf.lcd_density=192/ro.sf.lcd_density=190/g' /system/build.prop
 /system/xbin/sed -i 's/ro.sf.lcd_density=180/ro.sf.lcd_density=190/g' /system/build.prop
-/system/xbin/sed -i 's/ro.sf.lcd_density=177/ro.sf.lcd_density=190/g' /system/build.prop
+/system/xbin/sed -i 's/ro.sf.lcd_density=160/ro.sf.lcd_density=190/g' /system/build.prop
 mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p10 /system
 echo LCD Density set to 190dpi, Reboot to Activate!
 }
@@ -120,7 +120,7 @@ echo LCD Density set to 190dpi, Reboot to Activate!
 /system/xbin/sed -i 's/ro.sf.lcd_density=200/ro.sf.lcd_density=192/g' /system/build.prop
 /system/xbin/sed -i 's/ro.sf.lcd_density=190/ro.sf.lcd_density=192/g' /system/build.prop
 /system/xbin/sed -i 's/ro.sf.lcd_density=180/ro.sf.lcd_density=192/g' /system/build.prop
-/system/xbin/sed -i 's/ro.sf.lcd_density=177/ro.sf.lcd_density=192/g' /system/build.prop
+/system/xbin/sed -i 's/ro.sf.lcd_density=160/ro.sf.lcd_density=192/g' /system/build.prop
 mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p10 /system
 echo LCD Density set to 192dpi, Reboot to Activate!
 }
@@ -138,7 +138,7 @@ mount -o rw,remount -t yaffs2 /dev/block/mmcblk0p10 /system
 /system/xbin/sed -i 's/ro.sf.lcd_density=190/ro.sf.lcd_density=200/g' /system/build.prop
 /system/xbin/sed -i 's/ro.sf.lcd_density=192/ro.sf.lcd_density=200/g' /system/build.prop
 /system/xbin/sed -i 's/ro.sf.lcd_density=180/ro.sf.lcd_density=200/g' /system/build.prop
-/system/xbin/sed -i 's/ro.sf.lcd_density=177/ro.sf.lcd_density=200/g' /system/build.prop
+/system/xbin/sed -i 's/ro.sf.lcd_density=160/ro.sf.lcd_density=200/g' /system/build.prop
 mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p10 /system
 echo LCD Density set to 200dpi, Reboot to Activate!
 }
@@ -156,7 +156,7 @@ mount -o rw,remount -t yaffs2 /dev/block/mmcblk0p10 /system
 /system/xbin/sed -i 's/ro.sf.lcd_density=190/ro.sf.lcd_density=210/g' /system/build.prop
 /system/xbin/sed -i 's/ro.sf.lcd_density=192/ro.sf.lcd_density=210/g' /system/build.prop
 /system/xbin/sed -i 's/ro.sf.lcd_density=180/ro.sf.lcd_density=210/g' /system/build.prop
-/system/xbin/sed -i 's/ro.sf.lcd_density=177/ro.sf.lcd_density=210/g' /system/build.prop
+/system/xbin/sed -i 's/ro.sf.lcd_density=160/ro.sf.lcd_density=210/g' /system/build.prop
 mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p10 /system
 echo LCD Density set to 210dpi, Reboot to Activate!
 }
@@ -173,7 +173,7 @@ mount -o rw,remount -t yaffs2 /dev/block/mmcblk0p10 /system
 /system/xbin/sed -i 's/ro.sf.lcd_density=190/ro.sf.lcd_density=213/g' /system/build.prop
 /system/xbin/sed -i 's/ro.sf.lcd_density=192/ro.sf.lcd_density=213/g' /system/build.prop
 /system/xbin/sed -i 's/ro.sf.lcd_density=180/ro.sf.lcd_density=213/g' /system/build.prop
-/system/xbin/sed -i 's/ro.sf.lcd_density=177/ro.sf.lcd_density=213/g' /system/build.prop
+/system/xbin/sed -i 's/ro.sf.lcd_density=160/ro.sf.lcd_density=213/g' /system/build.prop
 mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p10 /system
 echo LCD Density set to 213dpi, Reboot to Activate!
 }
@@ -191,7 +191,7 @@ mount -o rw,remount -t yaffs2 /dev/block/mmcblk0p10 /system
 /system/xbin/sed -i 's/ro.sf.lcd_density=190/ro.sf.lcd_density=220/g' /system/build.prop
 /system/xbin/sed -i 's/ro.sf.lcd_density=192/ro.sf.lcd_density=220/g' /system/build.prop
 /system/xbin/sed -i 's/ro.sf.lcd_density=180/ro.sf.lcd_density=220/g' /system/build.prop
-/system/xbin/sed -i 's/ro.sf.lcd_density=177/ro.sf.lcd_density=220/g' /system/build.prop
+/system/xbin/sed -i 's/ro.sf.lcd_density=160/ro.sf.lcd_density=220/g' /system/build.prop
 mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p10 /system
 echo LCD Density set to 220dpi, Reboot to Activate!
 }
@@ -209,7 +209,7 @@ mount -o rw,remount -t yaffs2 /dev/block/mmcblk0p10 /system
 /system/xbin/sed -i 's/ro.sf.lcd_density=190/ro.sf.lcd_density=240/g' /system/build.prop
 /system/xbin/sed -i 's/ro.sf.lcd_density=192/ro.sf.lcd_density=240/g' /system/build.prop
 /system/xbin/sed -i 's/ro.sf.lcd_density=180/ro.sf.lcd_density=240/g' /system/build.prop
-/system/xbin/sed -i 's/ro.sf.lcd_density=177/ro.sf.lcd_density=240/g' /system/build.prop
+/system/xbin/sed -i 's/ro.sf.lcd_density=160/ro.sf.lcd_density=240/g' /system/build.prop
 mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p10 /system
 echo LCD Density set to 240dpi, Reboot to Activate!
 }
@@ -227,7 +227,7 @@ mount -o rw,remount -t yaffs2 /dev/block/mmcblk0p10 /system
 /system/xbin/sed -i 's/ro.sf.lcd_density=190/ro.sf.lcd_density=260/g' /system/build.prop
 /system/xbin/sed -i 's/ro.sf.lcd_density=192/ro.sf.lcd_density=260/g' /system/build.prop
 /system/xbin/sed -i 's/ro.sf.lcd_density=180/ro.sf.lcd_density=260/g' /system/build.prop
-/system/xbin/sed -i 's/ro.sf.lcd_density=177/ro.sf.lcd_density=260/g' /system/build.prop
+/system/xbin/sed -i 's/ro.sf.lcd_density=160/ro.sf.lcd_density=260/g' /system/build.prop
 mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p10 /system
 echo LCD Density set to 260dpi, Reboot to Activate!
 }
@@ -245,7 +245,7 @@ mount -o rw,remount -t yaffs2 /dev/block/mmcblk0p10 /system
 /system/xbin/sed -i 's/ro.sf.lcd_density=190/ro.sf.lcd_density=280/g' /system/build.prop
 /system/xbin/sed -i 's/ro.sf.lcd_density=192/ro.sf.lcd_density=280/g' /system/build.prop
 /system/xbin/sed -i 's/ro.sf.lcd_density=180/ro.sf.lcd_density=280/g' /system/build.prop
-/system/xbin/sed -i 's/ro.sf.lcd_density=177/ro.sf.lcd_density=280/g' /system/build.prop
+/system/xbin/sed -i 's/ro.sf.lcd_density=160/ro.sf.lcd_density=280/g' /system/build.prop
 mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p10 /system
 echo LCD Density set to 280dpi, Reboot to Activate!
 }
@@ -263,7 +263,7 @@ mount -o rw,remount -t yaffs2 /dev/block/mmcblk0p10 /system
 /system/xbin/sed -i 's/ro.sf.lcd_density=190/ro.sf.lcd_density=320/g' /system/build.prop
 /system/xbin/sed -i 's/ro.sf.lcd_density=192/ro.sf.lcd_density=320/g' /system/build.prop
 /system/xbin/sed -i 's/ro.sf.lcd_density=180/ro.sf.lcd_density=320/g' /system/build.prop
-/system/xbin/sed -i 's/ro.sf.lcd_density=177/ro.sf.lcd_density=320/g' /system/build.prop
+/system/xbin/sed -i 's/ro.sf.lcd_density=160/ro.sf.lcd_density=320/g' /system/build.prop
 mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p10 /system
 echo LCD Density set to 320dpi - Stock DPI, Reboot to Activate!
 }
