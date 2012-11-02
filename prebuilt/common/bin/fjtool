@@ -677,13 +677,13 @@ echo "Downloading Package Be Patient"
 fi
 if [ "$GOOD" = "1" ]; then
 echo "Mounting File System"
-  mount -o rw,remount -t yaffs2 /dev/block/mmcblk0p10 /system
+  mount -o rw,remount -t yaffs2 /dev/block/mmcblk0p24 /system
   cd /
 echo "Copying Nova Launcher to /system/app"
   cp /sdcard/tmp/NovaLauncher_1.3.2.apk /system/app/NovaLauncher_1.3.2.apk
 echo "Setting Permissions"
   chmod 644 /system/app/NovaLauncher_1.3.2.apk
-  mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p10 /system
+  mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p24 /system
   cd - >/dev/null 2>&1
   echo "Done! Reboot and Enjoy NovaLauncher!"
 else
@@ -723,13 +723,13 @@ echo "Downloading Package Be Patient"
 fi
 if [ "$GOOD" = "1" ]; then
 echo "Mounting File System"
-  mount -o rw,remount -t yaffs2 /dev/block/mmcblk0p10 /system
+  mount -o rw,remount -t yaffs2 /dev/block/mmcblk0p24 /system
   cd /
 echo "Copying Apex Launcher to /system/app"
   cp /sdcard/tmp/ApexLauncher_v1.3.3.apk /system/app/ApexLauncher_v1.3.3.apk
 echo "Setting Permissions"
   chmod 644 /system/app/ApexLauncher_v1.3.3.apk
-  mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p10 /system
+  mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p24 /system
   cd - >/dev/null 2>&1
   echo "Done! Reboot and Enjoy Apex Launcher!"
 else
