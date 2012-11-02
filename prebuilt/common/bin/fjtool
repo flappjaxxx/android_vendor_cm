@@ -652,9 +652,9 @@ mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p24 /system
 }
 
 novalauncher() {
-FILE=NovaLauncher_1.2.2.apk
-MD5SUM=78d79e05939063718e429765a96bdc5c
-URL="http://rootdev.org/i717/TU2/updates/NovaLauncher_1.2.2.apk"
+FILE=NovaLauncher_1.3.2.apk
+MD5SUM=4ba36adc10b801025b805dc1b3df48ac
+URL="http://rootdev.org/maguro/files/NovaLauncher_1.3.2.apk"
 if [ ! -d /sdcard/tmp ]; then
   MK=1
   mkdir -p /sdcard/tmp
@@ -677,15 +677,15 @@ echo "Downloading Package Be Patient"
 fi
 if [ "$GOOD" = "1" ]; then
 echo "Mounting File System"
-  mount -o rw,remount -t yaffs2 /dev/block/mmcblk0p24 /system
+  mount -o rw,remount -t yaffs2 /dev/block/mmcblk0p10 /system
   cd /
-echo "Copying NovaLauncher to /system/app"
-  cp /sdcard/tmp/NovaLauncher_1.2.2.apk /system/app/NovaLauncher_1.2.2.apk
+echo "Copying Nova Launcher to /system/app"
+  cp /sdcard/tmp/NovaLauncher_1.3.2.apk /system/app/NovaLauncher_1.3.2.apk
 echo "Setting Permissions"
-  chmod 644 /system/app/NovaLauncher_1.2.2.apk
-  mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p24 /system
+  chmod 644 /system/app/NovaLauncher_1.3.2.apk
+  mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p10 /system
   cd - >/dev/null 2>&1
-  echo "Done! Enjoy NovaLauncher!"
+  echo "Done! Reboot and Enjoy NovaLauncher!"
 else
   echo "Failed to download / install NovaLauncher"
   exit 1
@@ -698,9 +698,9 @@ fi
 }
 
 apexlauncher() {
-FILE=ApexLauncher_v1.2.5.apk
+FILE=ApexLauncher_v1.3.3.apk
 MD5SUM=e2d33e7062a5e9623f3066766b04b311
-URL="http://rootdev.org/i717/TU2/updates/ApexLauncher_v1.2.5.apk"
+URL="http://rootdev.org/maguro/files/ApexLauncher_v1.3.3.apk"
 if [ ! -d /sdcard/tmp ]; then
   MK=1
   mkdir -p /sdcard/tmp
@@ -723,15 +723,15 @@ echo "Downloading Package Be Patient"
 fi
 if [ "$GOOD" = "1" ]; then
 echo "Mounting File System"
-  mount -o rw,remount -t yaffs2 /dev/block/mmcblk0p24 /system
+  mount -o rw,remount -t yaffs2 /dev/block/mmcblk0p10 /system
   cd /
-echo "Copying ApexLauncher to /system/app"
-  cp /sdcard/tmp/ApexLauncher_v1.2.5.apk /system/app/ApexLauncher_v1.2.5.apk
+echo "Copying Apex Launcher to /system/app"
+  cp /sdcard/tmp/ApexLauncher_v1.3.3.apk /system/app/ApexLauncher_v1.3.3.apk
 echo "Setting Permissions"
-  chmod 644 /system/app/ApexLauncher_v1.2.5.apk
-  mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p24 /system
+  chmod 644 /system/app/ApexLauncher_v1.3.3.apk
+  mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p10 /system
   cd - >/dev/null 2>&1
-  echo "Done! Enjoy ApexLauncher!"
+  echo "Done! Reboot and Enjoy Apex Launcher!"
 else
   echo "Failed to download / install ApexLauncher"
   exit 1
