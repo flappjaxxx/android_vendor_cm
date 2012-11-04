@@ -3,6 +3,7 @@ cm_captivatemtd-userdebug
 cm_crespo-userdebug
 cm_crespo4g-userdebug
 cm_d2att-userdebug
+cm_d2mtr-userdebug
 cm_d2spr-userdebug
 cm_d2tmo-userdebug
 cm_d2usc-userdebug
@@ -39,6 +40,7 @@ cm_p5110-userdebug
 cm_p5113-userdebug
 cm_p930-userdebug
 cm_p970-userdebug
+cm_p990-userdebug
 cm_quincyatt-userdebug
 cm_quincytmo-userdebug
 cm_skyrocket-userdebug
@@ -48,6 +50,7 @@ cm_t769-userdebug
 cm_tf101-userdebug
 cm_tf201-userdebug
 cm_tf300t-userdebug
+cm_tf700t-userdebug
 cm_toroplus-userdebug
 cm_toro-userdebug
 cm_vibrantmtd-userdebug
