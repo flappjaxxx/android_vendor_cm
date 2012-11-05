@@ -179,5 +179,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.board=maguro
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.cm.version=AOSPxXx-GNex-$(shell date -u +%Y%m%d) \
-  ro.modversion=AOSPxXx-GNex-$(shell date -u +%Y%m%d)
+  ro.ota2.url=75&ID=33011534 \
+  ro.cm.version=AOSPxXx-maguro-$(shell date -u +%Y%m%d) \
+  ro.modversion=AOSPxXx-maguro-$(shell date -u +%Y%m%d)
