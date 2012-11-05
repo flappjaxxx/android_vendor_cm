@@ -170,5 +170,6 @@ else
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
+  ro.ota2.url=47&ID=44950871 \
   ro.cm.version=AOSPxXx-$(shell date -u +%Y%m%d) \
   ro.modversion=AOSPxXx-$(shell date -u +%Y%m%d)
