@@ -3,6 +3,7 @@ $(call inherit-product, vendor/cm/config/common_full.mk)
 
 # Default ringtone
 PRODUCT_PROPERTY_OVERRIDES += \
+<<<<<<< HEAD
     ro.config.ringtone=Basic_Tone.ogg \
     ro.config.notification_sound=01_Sherbet.ogg \
     ro.config.alarm_alert=Alarm_Buzzer.ogg
