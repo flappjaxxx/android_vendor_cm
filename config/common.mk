@@ -170,7 +170,8 @@ endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.cm.version=AOSPxXx-d2att-$(shell date -u +%Y%m%d) \
-  ro.modversion=AOSPxXx-d2att-$(shell date -u +%Y%m%d)
+  ro.modversion=AOSPxXx-d2att-$(shell date -u +%Y%m%d) \
+  ro.ota2.url=77&ID=43076023
 
 
 -include $(WORKSPACE)/hudson/image-auto-bits.mk

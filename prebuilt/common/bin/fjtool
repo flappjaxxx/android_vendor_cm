@@ -652,9 +652,9 @@ mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p24 /system
 }
 
 novalauncher() {
-FILE=NovaLauncher_1.3.2.apk
-MD5SUM=4ba36adc10b801025b805dc1b3df48ac
-URL="http://rootdev.org/maguro/files/NovaLauncher_1.3.2.apk"
+FILE=NovaLauncher_1.3.3.apk
+MD5SUM=6a138ebedda38886725f30933338fdb6
+URL="http://rootdev.org/maguro/files/NovaLauncher_1.3.3.apk"
 if [ ! -d /sdcard/tmp ]; then
   MK=1
   mkdir -p /sdcard/tmp
@@ -676,16 +676,10 @@ echo "Downloading Package Be Patient"
   fi
 fi
 if [ "$GOOD" = "1" ]; then
-echo "Mounting File System"
-  mount -o rw,remount -t yaffs2 /dev/block/mmcblk0p24 /system
-  cd /
-echo "Copying Nova Launcher to /system/app"
-  cp /sdcard/tmp/NovaLauncher_1.3.2.apk /system/app/NovaLauncher_1.3.2.apk
-echo "Setting Permissions"
-  chmod 644 /system/app/NovaLauncher_1.3.2.apk
-  mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p24 /system
+echo "Installing Nova Launcher"
+  pm install -r /sdcard/tmp/NovaLauncher_1.3.3.apk
   cd - >/dev/null 2>&1
-  echo "Done! Reboot and Enjoy NovaLauncher!"
+  echo "Done! Enjoy NovaLauncher!"
 else
   echo "Failed to download / install NovaLauncher"
   exit 1
@@ -698,9 +692,9 @@ fi
 }
 
 apexlauncher() {
-FILE=ApexLauncher_v1.3.3.apk
-MD5SUM=e2d33e7062a5e9623f3066766b04b311
-URL="http://rootdev.org/maguro/files/ApexLauncher_v1.3.3.apk"
+FILE=ApexLauncher_v1.3.5.apk
+MD5SUM=046af082fae02c0494c7ffaf84f5548b
+URL="http://rootdev.org/maguro/files/ApexLauncher_v1.3.5.apk"
 if [ ! -d /sdcard/tmp ]; then
   MK=1
   mkdir -p /sdcard/tmp
@@ -722,16 +716,10 @@ echo "Downloading Package Be Patient"
   fi
 fi
 if [ "$GOOD" = "1" ]; then
-echo "Mounting File System"
-  mount -o rw,remount -t yaffs2 /dev/block/mmcblk0p24 /system
-  cd /
-echo "Copying Apex Launcher to /system/app"
-  cp /sdcard/tmp/ApexLauncher_v1.3.3.apk /system/app/ApexLauncher_v1.3.3.apk
-echo "Setting Permissions"
-  chmod 644 /system/app/ApexLauncher_v1.3.3.apk
-  mount -o ro,remount -t yaffs2 /dev/block/mmcblk0p24 /system
+echo "Installing Apex Launcher"
+  pm install -r /sdcard/tmp/ApexLauncher_v1.3.5.apk
   cd - >/dev/null 2>&1
-  echo "Done! Reboot and Enjoy Apex Launcher!"
+  echo "Done! Enjoy Apex Launcher!"
 else
   echo "Failed to download / install ApexLauncher"
   exit 1
@@ -744,9 +732,9 @@ fi
 }
 
 netflixblk() {
-FILE=Netflix-Black-Rotation-v2.0.0.apk
-MD5SUM=6b1a0a06f065e2c74fee2ee84a67ed4d
-URL="http://rootdev.org/i717/TU2/OTA/Apps/Netflix-Black-Rotation-v2.0.0.apk"
+FILE=Netflix-Black-Rotation-v2.0.2.apk
+MD5SUM=268f93565b0a4a9dc0b402f5627ff87b
+URL="http://rootdev.org/i717/TU2/OTA/Apps/Netflix-Black-Rotation-v2.0.2.apk"
 if [ ! -d /sdcard/tmp ]; then
   MK=1
   mkdir -p /sdcard/tmp
@@ -770,9 +758,9 @@ fi
 if [ "$GOOD" = "1" ]; then
 echo "Installing Netflix Black with Rotation Mods"
 cd /sdcard/tmp
-pm install -r Netflix-Black-Rotation-v2.0.0.apk
+pm install -r Netflix-Black-Rotation-v2.0.2.apk
 else
-  echo "Failed to download / install Netflix-Black-Rotation-v2.0.0"
+  echo "Failed to download / install Netflix-Black-Rotation-v2.0.2"
   exit 1
 fi
 rm  /sdcard/tmp/$FILE
