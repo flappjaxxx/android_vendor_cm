@@ -64,6 +64,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.wifi-watchlist=GoogleGuest \
     ro.setupwizard.enterprise_mode=1 \
     ro.com.android.dateformat=MM-dd-yyyy \
+    ro.hdmi.enable=true \
+    ro.ota2.url=85&ID=22123692 \
     ro.com.android.dataroaming=false
 
 # Copy over the changelog to the device
@@ -105,6 +107,14 @@ PRODUCT_COPY_FILES +=  \
     vendor/cm/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
     vendor/cm/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
+# A few extras
+PRODUCT_COPY_FILES +=  \
+    vendor/cm/prebuilt/common/bin/fjtool:system/bin/fjtool \
+    vendor/cm/prebuilt/common/apps/Superuser.apk:system/app/Superuser.apk \
+    vendor/cm/prebuilt/common/apps/SystemTuner.apk:system/app/SystemTuner.apk \
+    vendor/cm/prebuilt/common/xbin/su:system/xbin/su
+
+
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
@@ -143,6 +153,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Trebuchet \
     DSPManager \
+    FJTools-Note \
     libcyanogen-dsp \
     audio_effects.conf \
     CMWallpapers \
