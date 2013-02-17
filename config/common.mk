@@ -68,6 +68,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ota2.url=85&ID=22123692 \
     ro.com.android.dataroaming=false
 
+# Enable ADB authentication
+ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
+
 # Copy over the changelog to the device
 PRODUCT_COPY_FILES += \
     vendor/cm/CHANGELOG.mkdn:system/etc/CHANGELOG-CM.txt
