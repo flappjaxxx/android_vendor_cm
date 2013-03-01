@@ -115,7 +115,9 @@ PRODUCT_COPY_FILES +=  \
 # A few extras
 PRODUCT_COPY_FILES +=  \
     vendor/cm/prebuilt/common/bin/fjtool:system/bin/fjtool \
-    vendor/cm/prebuilt/common/apps/SystemTuner.apk:system/app/SystemTuner.apk
+    vendor/cm/prebuilt/common/apps/Superuser.apk:system/app/Superuser.apk \
+    vendor/cm/prebuilt/common/apps/SystemTuner.apk:system/app/SystemTuner.apk \
+    vendor/cm/prebuilt/common/xbin/su:system/xbin/su
 
 
 # Enable SIP+VoIP on all targets
