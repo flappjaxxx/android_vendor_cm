@@ -71,6 +71,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ota2.url=85&ID=22123692 \
     ro.com.android.dataroaming=false
 
+ifneq ($(TARGET_BUILD_VARIANT),eng)
 # Enable ADB authentication
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
 
@@ -116,9 +117,7 @@ PRODUCT_COPY_FILES +=  \
 # A few extras
 PRODUCT_COPY_FILES +=  \
     vendor/cm/prebuilt/common/bin/fjtool:system/bin/fjtool \
-    vendor/cm/prebuilt/common/apps/Superuser.apk:system/app/Superuser.apk \
-    vendor/cm/prebuilt/common/apps/SystemTuner.apk:system/app/SystemTuner.apk \
-    vendor/cm/prebuilt/common/xbin/su:system/xbin/su
+    vendor/cm/prebuilt/common/apps/SystemTuner.apk:system/app/SystemTuner.apk 
 
 
 # Enable SIP+VoIP on all targets
