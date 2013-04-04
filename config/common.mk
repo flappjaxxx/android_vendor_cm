@@ -165,6 +165,9 @@ PRODUCT_PACKAGES += \
     CMFileManager \
     LockClock
 
+PRODUCT_PACKAGES += \
+    CellBroadcastReceiver
+
 # Extra tools in CM
 PRODUCT_PACKAGES += \
     openvpn \
