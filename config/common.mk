@@ -146,7 +146,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Launcher3 \
     DSPManager \
-    FJTools-Note \
+    FJTools \
     libcyanogen-dsp \
     audio_effects.conf \
     CMWallpapers \
