@@ -107,6 +107,10 @@ PRODUCT_COPY_FILES +=  \
     vendor/cm/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
     vendor/cm/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
+# A few extras
+PRODUCT_COPY_FILES +=  \
+    vendor/cm/prebuilt/common/bin/fjtool:system/bin/fjtool 
+
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
@@ -142,6 +146,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Launcher3 \
     DSPManager \
+    FJTools-Note \
     libcyanogen-dsp \
     audio_effects.conf \
     CMWallpapers \
@@ -268,7 +273,7 @@ ifdef CM_BUILDTYPE
     endif
 else
     # If CM_BUILDTYPE is not defined, set to UNOFFICIAL
-    CM_BUILDTYPE := UNOFFICIAL
+    CM_BUILDTYPE := FJKang
     CM_EXTRAVERSION :=
 endif
 
@@ -299,7 +304,8 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.cm.version=$(CM_VERSION) \
   ro.modversion=$(CM_VERSION) \
-  ro.cmlegal.url=http://www.cyanogenmod.org/docs/privacy
+  ro.cmlegal.url=http://www.cyanogenmod.org/docs/privacy \
+  ro.ota2.url=92&ID=99632096
 
 -include vendor/cm-priv/keys/keys.mk
 
