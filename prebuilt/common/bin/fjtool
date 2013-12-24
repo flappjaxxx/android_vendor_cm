@@ -779,9 +779,9 @@ echo "--Feature disabled for now--"
 }
 
 cwmrec5() {
-FILE=recovery-clockwork-5.8.4.8-quincyatt.img
-MD5SUM=9655d8c5ba38569054d96cf60df593c7
-URL="http://rootdev.org/i717/TU2/updates/recovery-clockwork-5.8.4.8-quincyatt.img"
+FILE=recovery-clockwork-6.0.4.5-find5.img
+MD5SUM=1320505f747adc8e7d0705f6e390d3ff
+URL="http://download2.clockworkmod.com/recoveries/recovery-clockwork-6.0.4.5-find5.img"
 if [ ! -d /sdcard/download/rectmp ]; then
   MK=1
   mkdir -p /sdcard/download/rectmp
@@ -805,8 +805,8 @@ fi
 if [ "$GOOD" = "1" ]; then
   cd /sdcard/download/rectmp
 echo "Flashing Recovery"
-  cp recovery-clockwork-5.8.4.8-quincyatt.img /sdcard/recovery.img
-dd if=/sdcard/recovery.img of=/dev/block/mmcblk0p22
+  cp recovery-clockwork-6.0.4.5-find5.img /sdcard/recovery.img
+dd if=/sdcard/recovery.img of=/dev/block/mmcblk0p24
 echo "Cleaning up"
   cd - >/dev/null 2>&1
   echo "Done! Please Reboot and Enjoy CWM Recovery"
@@ -824,59 +824,10 @@ if [ "$MK" = "1" ]; then
 fi
 }
 
-cwmrec6() {
-FILE=cwmtouch6.tgz
-MD5SUM=d54a2c1250ddc8f795aef00a8104180f
-URL="http://rootdev.org/i717/TU2/updates/cwmtouch6.tgz"
-if [ ! -d /sdcard/download/rectmp ]; then
-  MK=1
-  mkdir -p /sdcard/download/rectmp
-fi
-cd /sdcard/download/rectmp
-if [ -f "$FILE" ]; then
-MD5=`md5sum $FILE | awk '{ print $1 }'`
-  if [ "$MD5" = "$MD5SUM" ]; then
-     GOOD=1
-  fi
-fi
-if [ "$GOOD" != "1" ]; then 
-echo "Downloading Package Be Patient"
-rm  "$FILE"
-wget "$URL"
-  MD5=`md5sum $FILE | awk '{ print $1 }'`
-  if [ "$MD5" = "$MD5SUM" ]; then
-     GOOD=1
-  fi
-fi
-if [ "$GOOD" = "1" ]; then
-  cd /sdcard/download/rectmp
-echo "Extracting Package"
-  tar -xzf cwmtouch6.tgz
-echo "Flashing Recovery"
-  cp recovery.img /sdcard/recovery.img
-dd if=/sdcard/recovery.img of=/dev/block/mmcblk0p22
-echo "Cleaning up"
-  cd - >/dev/null 2>&1
-  echo "Done! Please Reboot and Enjoy CWM Recovery 6.0.1.4"
-  echo "Go give bhundven some thanks!"
-else
-  echo "Failed to Install CWM Recovery"
-  echo "Try Again"
-  exit 1
-fi
-rm  /sdcard/recovery.img
-rm  /sdcard/download/rectmp/$FILE
-rm -R /sdcard/download/rectmp
-
-if [ "$MK" = "1" ]; then
-  rm -R /sdcard/download/rectmp 
-fi
-}
-
 cwmtouch() {
-FILE=recovery-clockwork-touch-5.8.4.3-quincyatt.img
-MD5SUM=2326252613e95a36523594131fbc61e7
-URL="http://rootdev.org/i717/TU2/updates/recovery-clockwork-touch-5.8.4.3-quincyatt.img"
+FILE=recovery-clockwork-touch-6.0.4.5-find5.img
+MD5SUM=2da20bfdd1610368ce1ee7be145ba611
+URL="http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch-6.0.4.5-find5.img"
 if [ ! -d /sdcard/download/rectmp ]; then
   MK=1
   mkdir -p /sdcard/download/rectmp
@@ -900,8 +851,8 @@ fi
 if [ "$GOOD" = "1" ]; then
   cd /sdcard/download/rectmp
 echo "Flashing Recovery"
-  cp recovery-clockwork-touch-5.8.4.3-quincyatt.img /sdcard/recovery.img
-dd if=/sdcard/recovery.img of=/dev/block/mmcblk0p22
+  cp recovery-clockwork-touch-6.0.4.5-find5.img /sdcard/recovery.img
+dd if=/sdcard/recovery.img of=/dev/block/mmcblk0p24
 echo "Cleaning up"
   cd - >/dev/null 2>&1
   echo "Done! Please Reboot and Enjoy CWM Touch Recovery"
@@ -920,9 +871,9 @@ fi
 }
 
 twrp() {
-FILE=openrecovery-twrp-2.4.1.0-quincyatt.img
-MD5SUM=96bd6b6d905c69b18b5c3ae0c43bec83
-URL="http://rootdev.org/i717/TU2/updates/openrecovery-twrp-2.4.1.0-quincyatt.img"
+FILE=openrecovery-twrp-2.6.3.0-find5.img
+MD5SUM=91f53b3683c85b2a3a706793ae7dce6f
+URL="http://rootdev.org/ROMs/files/openrecovery-twrp-2.6.3.0-find5.img"
 if [ ! -d /sdcard/download/rectmp ]; then
   MK=1
   mkdir -p /sdcard/download/rectmp
@@ -946,8 +897,8 @@ fi
 if [ "$GOOD" = "1" ]; then
   cd /sdcard/download/rectmp
 echo "Flashing Recovery"
-  cp openrecovery-twrp-2.4.1.0-quincyatt.img /sdcard/recovery.img
-dd if=/sdcard/recovery.img of=/dev/block/mmcblk0p22
+  cp openrecovery-twrp-2.6.3.0-find5.img /sdcard/recovery.img
+dd if=/sdcard/recovery.img of=/dev/block/mmcblk0p24
 echo "Cleaning up"
   cd - >/dev/null 2>&1
   echo "Done! Please Reboot and Enjoy TWRP Recovery"
@@ -965,442 +916,15 @@ if [ "$MK" = "1" ]; then
 fi
 }
 
-192sleepmax() {
-mount -o remount,rw /system
-echo '192000' > /system/etc/andrev_oc/sleep_max
-echo 'Tweaked' > /system/media/profile
-}
-
-192sleepmin() {
-mount -o remount,rw /system
-echo '192000' > /system/etc/andrev_oc/sleep_min
-echo 'Tweaked' > /system/media/profile
-}
-
-192wakemax() {
-mount -o remount,rw /system
-echo '192000' > /system/etc/andrev_oc/wake_max
-echo '192000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-echo 'Tweaked' > /system/media/profile
-rm -f /system/etc/init.d/84fj
-echo 'echo '192000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq' > /system/etc/init.d/84fjwmax
-chmod 755 /system/etc/init.d/84fjwmax
-}
-
-192wakemin() {
-mount -o remount,rw /system
-echo '192000' > /system/etc/andrev_oc/wake_min
-echo '192000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-echo 'Tweaked' > /system/media/profile
-rm -f /system/etc/init.d/84fj
-echo 'echo '192000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq' > /system/etc/init.d/84fjwmin
-chmod 755 /system/etc/init.d/84fjwmin
-}
-
-384sleepmax() {
-mount -o remount,rw /system
-echo '384000' > /system/etc/andrev_oc/sleep_max
-echo 'Tweaked' > /system/media/profile
-}
-
-384sleepmin() {
-mount -o remount,rw /system
-echo '384000' > /system/etc/andrev_oc/sleep_min
-echo 'Tweaked' > /system/media/profile
-}
-
-384wakemax() {
-mount -o remount,rw /system
-echo '384000' > /system/etc/andrev_oc/wake_max
-echo '384000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-echo 'Tweaked' > /system/media/profile
-rm -f /system/etc/init.d/84fj
-echo 'echo '384000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq' > /system/etc/init.d/84fjwmax
-chmod 755 /system/etc/init.d/84fjwmax
-}
-
-384wakemin() {
-mount -o remount,rw /system
-echo '384000' > /system/etc/andrev_oc/wake_min
-echo '384000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-echo 'Tweaked' > /system/media/profile
-rm -f /system/etc/init.d/84fj
-echo 'echo '384000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq' > /system/etc/init.d/84fjwmin
-chmod 755 /system/etc/init.d/84fjwmin
-}
-
-486sleepmax() {
-mount -o remount,rw /system
-echo '486000' > /system/etc/andrev_oc/sleep_max
-echo 'Tweaked' > /system/media/profile
-}
-
-486sleepmin() {
-mount -o remount,rw /system
-echo '486000' > /system/etc/andrev_oc/sleep_min
-echo 'Tweaked' > /system/media/profile
-}
-
-486wakemax() {
-mount -o remount,rw /system
-echo '486000' > /system/etc/andrev_oc/wake_max
-echo '486000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-echo 'Tweaked' > /system/media/profile
-rm -f /system/etc/init.d/84fj
-echo 'echo '486000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq' > /system/etc/init.d/84fjwmax
-chmod 755 /system/etc/init.d/84fjwmax
-}
-
-486wakemin() {
-mount -o remount,rw /system
-echo '486000' > /system/etc/andrev_oc/wake_min
-echo '486000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-echo 'Tweaked' > /system/media/profile
-rm -f /system/etc/init.d/84fj
-echo 'echo '486000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq' > /system/etc/init.d/84fjwmin
-chmod 755 /system/etc/init.d/84fjwmin
-}
-
-594sleepmax() {
-mount -o remount,rw /system
-echo '594000' > /system/etc/andrev_oc/sleep_max
-echo 'Tweaked' > /system/media/profile
-}
-
-594sleepmin() {
-mount -o remount,rw /system
-echo '594000' > /system/etc/andrev_oc/sleep_min
-echo 'Tweaked' > /system/media/profile
-}
-
-594wakemax() {
-mount -o remount,rw /system
-echo '594000' > /system/etc/andrev_oc/wake_max
-echo '594000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-echo 'Tweaked' > /system/media/profile
-rm -f /system/etc/init.d/84fj
-echo 'echo '594000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq' > /system/etc/init.d/84fjwmax
-chmod 755 /system/etc/init.d/84fjwmax
-}
-
-594wakemin() {
-mount -o remount,rw /system
-echo '594000' > /system/etc/andrev_oc/wake_min
-echo '594000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-echo 'Tweaked' > /system/media/profile
-rm -f /system/etc/init.d/84fj
-echo 'echo '594000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq' > /system/etc/init.d/84fjwmin
-chmod 755 /system/etc/init.d/84fjwmin
-}
-
-702sleepmax() {
-mount -o remount,rw /system
-echo '702000' > /system/etc/andrev_oc/sleep_max
-echo 'Tweaked' > /system/media/profile
-}
-
-702sleepmin() {
-mount -o remount,rw /system
-echo '702000' > /system/etc/andrev_oc/sleep_min
-echo 'Tweaked' > /system/media/profile
-}
-
-702wakemax() {
-mount -o remount,rw /system
-echo '702000' > /system/etc/andrev_oc/wake_max
-echo '702000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-echo 'Tweaked' > /system/media/profile
-rm -f /system/etc/init.d/84fj
-echo 'echo '702000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq' > /system/etc/init.d/84fjwmax
-chmod 755 /system/etc/init.d/84fjwmax
-}
-
-702wakemin() {
-mount -o remount,rw /system
-echo '702000' > /system/etc/andrev_oc/wake_min
-echo '702000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-echo 'Tweaked' > /system/media/profile
-rm -f /system/etc/init.d/84fj
-echo 'echo '702000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq' > /system/etc/init.d/84fjwmin
-chmod 755 /system/etc/init.d/84fjwmin
-}
-
-864sleepmax() {
-mount -o remount,rw /system
-echo '864000' > /system/etc/andrev_oc/sleep_max
-echo 'Tweaked' > /system/media/profile
-}
-
-864sleepmin() {
-mount -o remount,rw /system
-echo '864000' > /system/etc/andrev_oc/sleep_min
-echo 'Tweaked' > /system/media/profile
-}
-
-864wakemax() {
-mount -o remount,rw /system
-echo '864000' > /system/etc/andrev_oc/wake_max
-echo '864000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-echo 'Tweaked' > /system/media/profile
-rm -f /system/etc/init.d/84fj
-echo 'echo '864000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq' > /system/etc/init.d/84fjwmax
-chmod 755 /system/etc/init.d/84fjwmax
-}
-
-864wakemin() {
-mount -o remount,rw /system
-echo '864000' > /system/etc/andrev_oc/wake_min
-echo '864000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-echo 'Tweaked' > /system/media/profile
-rm -f /system/etc/init.d/84fj
-echo 'echo '864000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq' > /system/etc/init.d/84fjwmin
-chmod 755 /system/etc/init.d/84fjwmin
-}
-
-918sleepmax() {
-mount -o remount,rw /system
-echo '918000' > /system/etc/andrev_oc/sleep_max
-echo 'Tweaked' > /system/media/profile
-}
-
-918sleepmin() {
-mount -o remount,rw /system
-echo '918000' > /system/etc/andrev_oc/sleep_min
-echo 'Tweaked' > /system/media/profile
-}
-
-918wakemax() {
-mount -o remount,rw /system
-echo '918000' > /system/etc/andrev_oc/wake_max
-echo '918000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-echo 'Tweaked' > /system/media/profile
-rm -f /system/etc/init.d/84fj
-echo 'echo '918000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq' > /system/etc/init.d/84fjwmax
-chmod 755 /system/etc/init.d/84fjwmax
-}
-
-918wakemin() {
-mount -o remount,rw /system
-echo '918000' > /system/etc/andrev_oc/wake_min
-echo '918000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-echo 'Tweaked' > /system/media/profile
-rm -f /system/etc/init.d/84fj
-echo 'echo '918000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq' > /system/etc/init.d/84fjwmin
-chmod 755 /system/etc/init.d/84fjwmin
-}
-
-972sleepmax() {
-mount -o remount,rw /system
-echo '972000' > /system/etc/andrev_oc/sleep_max
-echo 'Tweaked' > /system/media/profile
-}
-
-972sleepmin() {
-mount -o remount,rw /system
-echo '972000' > /system/etc/andrev_oc/sleep_min
-echo 'Tweaked' > /system/media/profile
-}
-
-972wakemax() {
-mount -o remount,rw /system
-echo '972000' > /system/etc/andrev_oc/wake_max
-echo '972000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-echo 'Tweaked' > /system/media/profile
-rm -f /system/etc/init.d/84fj
-echo 'echo '972000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq' > /system/etc/init.d/84fjwmax
-chmod 755 /system/etc/init.d/84fjwmax
-}
-
-972wakemin() {
-mount -o remount,rw /system
-echo '972000' > /system/etc/andrev_oc/wake_min
-echo '972000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-echo 'Tweaked' > /system/media/profile
-rm -f /system/etc/init.d/84fj
-echo 'echo '972000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq' > /system/etc/init.d/84fjwmin
-chmod 755 /system/etc/init.d/84fjwmin
-}
-
-1134sleepmax() {
-mount -o remount,rw /system
-echo '1134000' > /system/etc/andrev_oc/sleep_max
-echo 'Tweaked' > /system/media/profile
-}
-
-1134sleepmin() {
-mount -o remount,rw /system
-echo '1134000' > /system/etc/andrev_oc/sleep_min
-echo 'Tweaked' > /system/media/profile
-}
-
-1134wakemax() {
-mount -o remount,rw /system
-echo '1134000' > /system/etc/andrev_oc/wake_max
-echo '1134000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-echo 'Tweaked' > /system/media/profile
-rm -f /system/etc/init.d/84fj
-echo 'echo '1134000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq' > /system/etc/init.d/84fjwmax
-chmod 755 /system/etc/init.d/84fjwmax
-}
-
-1134wakemin() {
-mount -o remount,rw /system
-echo '1134000' > /system/etc/andrev_oc/wake_min
-echo '1134000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-echo 'Tweaked' > /system/media/profile
-rm -f /system/etc/init.d/84fj
-echo 'echo '1134000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq' > /system/etc/init.d/84fjwmin
-chmod 755 /system/etc/init.d/84fjwmin
-}
-
-1350sleepmax() {
-mount -o remount,rw /system
-echo '1350000' > /system/etc/andrev_oc/sleep_max
-echo 'Tweaked' > /system/media/profile
-}
-
-1350sleepmin() {
-mount -o remount,rw /system
-echo '1350000' > /system/etc/andrev_oc/sleep_min
-echo 'Tweaked' > /system/media/profile
-}
-
-1350wakemax() {
-mount -o remount,rw /system
-echo '1350000' > /system/etc/andrev_oc/wake_max
-echo '1350000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-echo 'Tweaked' > /system/media/profile
-rm -f /system/etc/init.d/84fj
-echo 'echo '1350000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq' > /system/etc/init.d/84fjwmax
-chmod 755 /system/etc/init.d/84fjwmax
-}
-
-1350wakemin() {
-mount -o remount,rw /system
-echo '1350000' > /system/etc/andrev_oc/wake_min
-echo '1350000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-echo 'Tweaked' > /system/media/profile
-rm -f /system/etc/init.d/84fj
-echo 'echo '1350000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq' > /system/etc/init.d/84fjwmin
-chmod 755 /system/etc/init.d/84fjwmin
-}
-
-1512sleepmax() {
-mount -o remount,rw /system
-echo '1512000' > /system/etc/andrev_oc/sleep_max
-echo 'Tweaked' > /system/media/profile
-}
-
-1512sleepmin() {
-mount -o remount,rw /system
-echo '1512000' > /system/etc/andrev_oc/sleep_min
-echo 'Tweaked' > /system/media/profile
-}
-
-1512wakemax() {
-mount -o remount,rw /system
-echo '1512000' > /system/etc/andrev_oc/wake_max
-echo '1512000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-echo 'Tweaked' > /system/media/profile
-rm -f /system/etc/init.d/84fj
-echo 'echo '1512000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq' > /system/etc/init.d/84fjwmax
-chmod 755 /system/etc/init.d/84fjwmax
-}
-
-1512wakemin() {
-mount -o remount,rw /system
-echo '1512000' > /system/etc/andrev_oc/wake_min
-echo '1512000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-echo 'Tweaked' > /system/media/profile
-rm -f /system/etc/init.d/84fj
-echo 'echo '1512000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq' > /system/etc/init.d/84fjwmin
-chmod 755 /system/etc/init.d/84fjwmin
-}
-
-conservativesleep() {
-mount -o remount,rw /system
-echo 'conservative' > /system/etc/andrev_oc/sleep_gov
-}
-
-conservativewake() {
-mount -o remount,rw /system
-echo 'conservative' > /system/etc/andrev_oc/wake_gov
-echo 'conservative' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-rm -f /system/etc/init.d/84fj
-echo 'echo 'conservative' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor' > /system/etc/init.d/84fjwgov
-chmod 755 /system/etc/init.d/84fjwgov
-}
-
-ondemandsleep() {
-mount -o remount,rw /system
-echo 'ondemand' > /system/etc/andrev_oc/sleep_gov
-}
-
-ondemandwake() {
-mount -o remount,rw /system
-echo 'ondemand' > /system/etc/andrev_oc/wake_gov
-echo 'ondemand' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-rm -f /system/etc/init.d/84fj
-echo 'echo 'ondemand' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor' > /system/etc/init.d/84fjwgov
-chmod 755 /system/etc/init.d/84fjwgov
-}
-
-performancesleep() {
-mount -o remount,rw /system
-echo 'performance' > /system/etc/andrev_oc/sleep_gov
-}
-
-performancewake() {
-mount -o remount,rw /system
-echo 'performance' > /system/etc/andrev_oc/wake_gov
-echo 'performance' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-rm -f /system/etc/init.d/84fj
-echo 'echo 'performance' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor' > /system/etc/init.d/84fjwgov
-chmod 755 /system/etc/init.d/84fjwgov
-}
-
-powersavesleep() {
-mount -o remount,rw /system
-echo 'powersave' > /system/etc/andrev_oc/sleep_gov
-}
-
-powersavewake() {
-mount -o remount,rw /system
-echo 'powersave' > /system/etc/andrev_oc/wake_gov
-echo 'powersave' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-rm -f /system/etc/init.d/84fj
-echo 'echo 'powersave' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor' > /system/etc/init.d/84fjwgov
-chmod 755 /system/etc/init.d/84fjwgov
-}
-
-userspacesleep() {
-mount -o remount,rw /system
-echo 'userspace' > /system/etc/andrev_oc/sleep_gov
-}
-
-userspacewake() {
-mount -o remount,rw /system
-echo 'userspace' > /system/etc/andrev_oc/wake_gov
-echo 'userspace' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-rm -f /system/etc/init.d/84fj
-echo 'echo 'userspace' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor' > /system/etc/init.d/84fjwgov
-chmod 755 /system/etc/init.d/84fjwgov
-}
-
-restartandrev() {
-killall andrev_oc
-/system/xbin/andrev_oc
-}
-
-svoice() {
-FILE=svoice.tgz
-MD5SUM=73dd516be224e8bfa0df7000c1f6ec92
-URL="http://rootdev.org/i717/TU2/updates/svoice.tgz"
-if [ ! -d /sdcard/download/tmp ]; then
+twrpmax() {
+FILE=openrecovery-twrp-2.6.3.0-find5-TP-patch.img
+MD5SUM=69539e30a56fa6a525245834d8f08b98
+URL="http://mirror.lucky.li/android/oppo/x909/recovery/custom/openrecovery-twrp-2.6.3.0-find5-TP-patch.img"
+if [ ! -d /sdcard/download/rectmp ]; then
   MK=1
-  mkdir -p /sdcard/download/tmp
+  mkdir -p /sdcard/download/rectmp
 fi
-cd /sdcard/download/tmp
+cd /sdcard/download/rectmp
 if [ -f "$FILE" ]; then
 MD5=`md5sum $FILE | awk '{ print $1 }'`
   if [ "$MD5" = "$MD5SUM" ]; then
@@ -1417,34 +941,27 @@ wget "$URL"
   fi
 fi
 if [ "$GOOD" = "1" ]; then
-echo "Mounting File System"
-mount -o remount,rw /system
-  cd /sdcard/download/tmp
-echo "Extracting Package"
-  tar -xzf svoice.tgz
-echo "Removing Old Files"
-rm /data/app/com.vlingo.midas*.apk
-echo "Copying Files"
-  cp -R system /
-echo "Setting Permissions"
-chmod 644 /system/app/voicetalk.apk
+  cd /sdcard/download/rectmp
+echo "Flashing Recovery"
+  cp openrecovery-twrp-2.6.3.0-find5-TP-patch.img /sdcard/recovery.img
+dd if=/sdcard/recovery.img of=/dev/block/mmcblk0p24
 echo "Cleaning up"
   cd - >/dev/null 2>&1
-  echo "Done! Please Enjoy S-Voice"
+  echo "Done! Please Reboot and Enjoy TWRP Recovery patched by maxwen"
 else
-  echo "Failed to Install S-Voice"
+  echo "Failed to Install TWRP Recovery"
   echo "Try Again"
   exit 1
 fi
-rm  /sdcard/download/tmp/$FILE
-rm -R /sdcard/download/tmp
-mount -o remount,ro /system
+rm  /sdcard/recovery.img
+rm  /sdcard/download/rectmp/$FILE
+rm -R /sdcard/download/rectmp
 
 if [ "$MK" = "1" ]; then
-  rm -R /sdcard/download/tmp   
-mount -o remount,ro /system
+  rm -R /sdcard/download/rectmp 
 fi
 }
+
 
 getswype() {
 FILE=blackswype.tgz
@@ -1502,122 +1019,8 @@ if [ "$MK" = "1" ]; then
 fi
 }
 
-ocgpu() {
-mount -o remount,rw /system
-rm /system/etc/init.d/99gpuoc
-echo '#!/system/bin/sh
-echo '300000000' > /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_gpuclk
-echo '228571000' > /sys/devices/platform/kgsl-2d0.0/kgsl/kgsl-2d0/max_gpuclk
-echo '228571000' > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl-2d1/max_gpuclk' > /system/etc/init.d/99gpuoc
-chmod 777 /system/etc/init.d/99gpuoc
-/system/etc/init.d/99gpuoc
-echo "GPU Overclocked"
-mount -o remount,ro /system
-}
 
-noocgpu() {
-mount -o remount,rw /system
-rm /system/etc/init.d/99gpuoc
-echo '#!/system/bin/sh
-echo '266667000' > /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_gpuclk
-echo '200000000' > /sys/devices/platform/kgsl-2d0.0/kgsl/kgsl-2d0/max_gpuclk
-echo '200000000' > /sys/devices/platform/kgsl-2d1.1/kgsl/kgsl-2d1/max_gpuclk' > /system/etc/init.d/99nogpuoc
-chmod 777 /system/etc/init.d/99nogpuoc
-/system/etc/init.d/99nogpuoc
-rm /system/etc/init.d/99nogpuoc
-echo "GPU clock speeds set back to normal"
-mount -o remount,ro /system
-}
 
-poffice() {
-FILE=poffice.tgz
-MD5SUM=ac258f5f9264a1efa0c23bc33793c38f
-URL="http://rootdev.org/i717/TU2/updates/poffice.tgz"
-if [ ! -d /sdcard/tmp ]; then
-  MK=1
-  mkdir -p /sdcard/tmp
-fi
-cd /sdcard/tmp
-if [ -f "$FILE" ]; then
-  MD5=`md5sum $FILE | awk '{ print $1 }'`
-  if [ "$MD5" = "$MD5SUM" ]; then
-     GOOD=1
-  fi
-fi
-if [ "$GOOD" != "1" ]; then
-echo "Downloading Package Be Patient"
-  rm  "$FILE"
-  wget "$URL"
-  MD5=`md5sum $FILE | awk '{ print $1 }'`
-  if [ "$MD5" = "$MD5SUM" ]; then
-     GOOD=1
-  fi
-fi
-if [ "$GOOD" = "1" ]; then
-echo "Mounting File System"
-  mount -o remount,rw /system
-  cd /
-cd /sdcard/tmp
-echo "Extracting Package"
-tar -xzf poffice.tgz
-echo "Installing Polaris Office"
-cp -R system /
-echo "Setting Permissions"
-chmod 644 /system/app/PolarisOffice.apk
-chmod 644 /system/lib/libpolarisoffice.so
-  mount -o remount,ro /system
-  cd - >/dev/null 2>&1
-  echo "Done! Enjoy Polaris Office!"
-else
-  echo "Failed to download / install Polaris Office"
-  exit 1
-fi
-rm  /sdcard/tmp/$FILE
-
-if [ "$MK" = "1" ]; then
-  rmdir /sdcard/tmp 
-fi
-}
-
-fastcharge() {
-mount -o remount,rw /system
-rm /system/etc/init.d/98fastcharge
-echo '#!/system/bin/sh
-echo '1' > /sys/kernel/fast_charge/force_fast_charge' > /system/etc/init.d/98fastcharge
-chmod 777 /system/etc/init.d/98fastcharge
-/system/etc/init.d/98fastcharge
-echo "Fast Charge Enabled"
-eco "* /sys/kernel/fast_charge/force_fast_charge"
-echo "*   1 - substitute AC to USB charging always"
-mount -o remount,ro /system
-}
-
-fastcharge2() {
-mount -o remount,rw /system
-rm /system/etc/init.d/98fastcharge
-echo '#!/system/bin/sh
-echo '2' > /sys/kernel/fast_charge/force_fast_charge' > /system/etc/init.d/98fastcharge
-chmod 777 /system/etc/init.d/98fastcharge
-/system/etc/init.d/98fastcharge
-echo "Fast Charge Option 2 Enabled"
-echo "* /sys/kernel/fast_charge/force_fast_charge"
-echo "*   2 - substitute AC to USB charging only if no USB peripheral is detected"
-mount -o remount,ro /system
-}
-
-nofastcharge() {
-mount -o remount,rw /system
-rm /system/etc/init.d/98fastcharge
-echo '#!/system/bin/sh
-echo '0' > /sys/kernel/fast_charge/force_fast_charge' > /system/etc/init.d/98nofastcharge
-chmod 777 /system/etc/init.d/98nofastcharge
-/system/etc/init.d/98nofastcharge
-rm /system/etc/init.d/98nofastcharge
-echo "Fast Charge Disabled"
-echo ":* /sys/kernel/fast_charge/force_fast_charge"
-echo "*   0 - disabled -default-"
-mount -o remount,ro /system
-}
 
 #### Main execution
 main() {
@@ -1710,6 +1113,7 @@ main() {
     "cwmrec6") cwmrec6 ;;   # *
     "cwmtouch") cwmtouch ;;   # *
     "twrp") twrp ;;   # *
+    "twrpmax") twrpmax ;;   # *
     "1134sleepmax") 1134sleepmax ;;   # *
     "1134sleepmin") 1134sleepmin ;;   # *
     "1134wakemax") 1134wakemax ;;   # *
