@@ -912,7 +912,7 @@ fi
 twrp() {
 FILE=openrecovery-twrp-2.6.3.0-find5.img
 MD5SUM=91f53b3683c85b2a3a706793ae7dce6f
-URL="http://rootdev.org/ROMs/files/openrecovery-twrp-2.6.3.0-find5.img"
+URL="http://rootdev.org/openrecovery-twrp-2.6.3.0-find5.img"
 if [ ! -d /sdcard/download/rectmp ]; then
   MK=1
   mkdir -p /sdcard/download/rectmp
