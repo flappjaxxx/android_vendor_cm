@@ -627,6 +627,45 @@ upfjtools() {
 echo "You are up to date..."
 }
 
+xposed() {
+FILE=de.robv.android.xposed.installer_v25_36cbbc.apk
+MD5SUM=36cbbc7909b852730747794ac439c5d3
+URL="http://dl-count.xposed.info/modules/de.robv.android.xposed.installer_v25_36cbbc.apk"
+if [ ! -d /sdcard/tmp ]; then
+  MK=1
+  mkdir -p /sdcard/tmp
+fi
+cd /sdcard/tmp
+if [ -f "$FILE" ]; then
+  MD5=`md5sum $FILE | awk '{ print $1 }'`
+  if [ "$MD5" = "$MD5SUM" ]; then
+     GOOD=1
+  fi
+fi
+if [ "$GOOD" != "1" ]; then
+echo "Downloading Package Be Patient"
+  rm  "$FILE"
+  wget "$URL"
+  MD5=`md5sum $FILE | awk '{ print $1 }'`
+  if [ "$MD5" = "$MD5SUM" ]; then
+     GOOD=1
+  fi
+fi
+if [ "$GOOD" = "1" ]; then
+echo "Installing Xposed Framework Installer"
+cd /sdcard/tmp
+pm install -r de.robv.android.xposed.installer_v25_36cbbc.apk
+else
+  echo "Failed to download / install Xposed Framework Installer"
+  exit 1
+fi
+rm  /sdcard/tmp/$FILE
+
+if [ "$MK" = "1" ]; then
+  rmdir /sdcard/tmp 
+fi
+}
+
 novalauncher() {
 FILE=NovaLauncher_2.0.apk
 MD5SUM=ef8a7e51c37289da4ab60a5a215e3888
@@ -1174,6 +1213,7 @@ main() {
     "noocgpu") noocgpu ;;   # *
     "themes") themes ;;   # *
     "fastcharge") fastcharge ;;   # *
+    "xposed") xposed ;;   # *
     "fastcharge2") fastcharge2 ;;   # *
     "nofastcharge") nofastcharge ;;   # *
     "poffice") poffice ;;   # *
