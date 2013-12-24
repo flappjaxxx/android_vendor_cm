@@ -817,7 +817,7 @@ disabled() {
 echo "--Feature disabled for now--"
 }
 
-cwmrec5() {
+cwmrec6() {
 FILE=recovery-clockwork-6.0.4.5-find5.img
 MD5SUM=1320505f747adc8e7d0705f6e390d3ff
 URL="http://download2.clockworkmod.com/recoveries/recovery-clockwork-6.0.4.5-find5.img"
