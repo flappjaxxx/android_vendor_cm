@@ -109,7 +109,6 @@ PRODUCT_COPY_FILES +=  \
 
 # A few extras
 PRODUCT_COPY_FILES +=  \
-    vendor/cm/prebuilt/common/apps/Find5Parts.apk:system/app/Find5Parts.apk \
     vendor/cm/prebuilt/common/bin/fjtool:system/bin/fjtool 
 
 # Enable SIP+VoIP on all targets
